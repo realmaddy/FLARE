@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flare - Customers</title>
+    <link rel="stylesheet" href="Customers.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Flare</div>
+            <ul class="menu">
+                <li><a href="Flare.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="Servers.html"><i class="fas fa-server"></i> Servers</a></li>
+                <li><a href="Channels.html"><i class="fas fa-tv"></i> Channels</a></li>
+                <li><a href="Customers.html"><i class="fas fa-users"></i> Customers</a></li>
+                <li><a href="Resellers.html"><i class="fas fa-user-tag"></i> Resellers</a></li>
+                <li><a href="Radio.html"><i class="fas fa-broadcast-tower"></i> Radio</a></li>
+                <li><a href="Statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+                <li><a href="Tools.html" class="active"><i class="fas fa-wrench"></i> Tools</a></li>
+                <li><a href="Settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <header>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+            </header>
+            <!-- Customer List Section -->
+            <div class="customer-list">
+                <h2>Customer List</h2>
+                <input type="text" id="search-bar" placeholder="Search Customers...">
+                <table id="customer-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subscription</th>
+                            <th>Last Login</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example Customer Row -->
+                        <tr>
+                            <td>John Doe</td>
+                            <td>johndoe@example.com</td>
+                            <td>Active</td>
+                            <td>2025-03-21</td>
+                            <td>
+                                <button class="view-btn">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>janesmith@example.com</td>
+                            <td>Inactive</td>
+                            <td>2025-03-20</td>
+                            <td>
+                                <button class="view-btn">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alice Johnson</td>
+                            <td>alicejohnson@example.com</td>
+                            <td>Active</td>
+                            <td>2025-03-19</td>
+                            <td>
+                                <button class="view-btn">View</button>
+                            </td>
+                        </tr>
+                        <!-- More Customer Rows Here -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Customer Details Section -->
+            <div class="customer-details" style="display: none;">
+                <h2>Customer Details</h2>
+                <form id="edit-form">
+                    <label for="customer-name">Name:</label>
+                    <input type="text" id="customer-name">
+                    <label for="customer-email">Email:</label>
+                    <input type="email" id="customer-email">
+                    <label for="subscription-status">Subscription Status:</label>
+                    <select id="subscription-status">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                    <button type="submit">Save Changes</button>
+                </form>
+                <!-- Subscription Management -->
+                <h3>Subscription Management</h3>
+                <button id="renew-btn">Renew Subscription</button>
+                <button id="upgrade-btn">Upgrade Plan</button>
+                <button id="cancel-btn">Cancel Subscription</button>
+            </div>
+        </div>
+    </div>
+    <script src="Customers.js"></script>
+</body>
+</html>

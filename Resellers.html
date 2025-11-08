@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flare - Resellers</title>
+    <link rel="stylesheet" href="resellers.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script>
+  // Apply saved dark mode before content load
+  (function() {
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  })();
+</script>
+
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Flare</div>
+            <ul class="menu">
+                <li><a href="Flare.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="Servers.html"><i class="fas fa-server"></i> Servers</a></li>
+                <li><a href="Channels.html"><i class="fas fa-tv"></i> Channels</a></li>
+                <li><a href="Customers.html"><i class="fas fa-users"></i> Customers</a></li>
+                <li><a href="Resellers.html"><i class="fas fa-user-tag"></i> Resellers</a></li>
+                <li><a href="Radio.html"><i class="fas fa-broadcast-tower"></i> Radio</a></li>
+                <li><a href="Statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+                <li><a href="Tools.html" class="active"><i class="fas fa-wrench"></i> Tools</a></li>
+                <li><a href="Settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <header>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+            </header>
+            <!-- Reseller List Section -->
+            <div class="reseller-list">
+                <h2>Reseller List</h2>
+                <input type="text" id="search-bar" placeholder="Search Resellers...">
+                <table id="reseller-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Sales Performance</th>
+                            <th>Last Login</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example Reseller Row -->
+                        <tr>
+                            <td>Reseller One</td>
+                            <td>resellerone@example.com</td>
+                            <td>$5000</td>
+                            <td>2025-03-21</td>
+                            <td>
+                                <button class="view-btn">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Reseller Two</td>
+                            <td>resellertwo@example.com</td>
+                            <td>$3000</td>
+                            <td>2025-03-20</td>
+                            <td>
+                                <button class="view-btn">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Reseller Three</td>
+                            <td>resellerthree@example.com</td>
+                            <td>$4500</td>
+                            <td>2025-03-19</td>
+                            <td>
+                                <button class="view-btn">View</button>
+                            </td>
+                        </tr>
+                        <!-- More Reseller Rows Here -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Reseller Details Section -->
+            <div class="reseller-details" style="display: none;">
+                <h2>Reseller Details</h2>
+                <form id="edit-form">
+                    <label for="reseller-name">Name:</label>
+                    <input type="text" id="reseller-name">
+                    <label for="reseller-email">Email:</label>
+                    <input type="email" id="reseller-email">
+                    <label for="commission-rate">Commission Rate:</label>
+                    <input type="text" id="commission-rate">
+                    <button type="submit">Save Changes</button>
+                </form>
+                <!-- Sales Performance -->
+                <h3>Sales Performance</h3>
+                <div id="sales-chart"></div>
+                <!-- Commission Management -->
+                <h3>Commission Management</h3>
+                <button id="update-commission-btn">Update Commission</button>
+                <!-- Customer Assignment -->
+                <h3>Customer Assignment</h3>
+                <button id="reassign-customer-btn">Reassign Customer</button>
+            </div>
+        </div>
+    </div>
+    <script src="resellers.js"></script>
+</body>
+</html>

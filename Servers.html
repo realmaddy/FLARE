@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servers - Flare Panel</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="Servers.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">Flare</div>
+      <ul class="menu">
+        <li><a href="Flare.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="Servers.html" class="active"><i class="fas fa-server"></i> Servers</a></li>
+        <li><a href="Channels.html"><i class="fas fa-tv"></i> Channels</a></li>
+        <li><a href="Customers.html"><i class="fas fa-users"></i> Customers</a></li>
+        <li><a href="Resellers.html"><i class="fas fa-user-tag"></i> Resellers</a></li>
+        <li><a href="Radio.html"><i class="fas fa-broadcast-tower"></i> Radio</a></li>
+        <li><a href="Statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+        <li><a href="Tools.html"><i class="fas fa-wrench"></i> Tools</a></li>
+        <li><a href="Settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
+      </header>
+
+      <section class="servers">
+        <div class="info-box">
+          <h3>Server Overview</h3>
+          <div class="server-status">
+            <p><strong>Status:</strong> <span class="status-online">Online</span></p>
+            <p><strong>Uptime:</strong> 45 days, 12:34:56</p>
+          </div>
+          <div class="server-stats">
+            <div class="stat"><label>CPU Usage</label><div class="progress-bar" style="--progress-width: 60%;"></div><span>60%</span></div>
+            <div class="stat"><label>RAM Usage</label><div class="progress-bar" style="--progress-width: 70%;"></div><span>70%</span></div>
+            <div class="stat"><label>Disk Usage</label><div class="progress-bar" style="--progress-width: 50%;"></div><span>50%</span></div>
+          </div>
+        </div>
+
+        <div class="chart-box">
+          <h4>Server Performance</h4>
+          <div id="server-chart"></div>
+        </div>
+
+        <div class="info-box server-controls">
+          <h4>Server Controls</h4>
+          <div class="btn-group">
+            <button class="control-btn restart-btn">Restart</button>
+            <button class="control-btn stop-btn">Stop</button>
+            <button class="control-btn start-btn">Start</button>
+            <button class="control-btn suspend-btn">Suspend</button>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h4>System Logs</h4>
+          <p><strong>Access Log:</strong> User 'admin' logged at 2023-10-05 14:22</p>
+          <p><strong>Error Log:</strong> No recent errors</p>
+          <p><strong>Audit Log:</strong> Config updated at 2023-10-04 09:15</p>
+        </div>
+
+        <div class="info-box">
+          <h4>Server Configuration</h4>
+          <div class="btn-group">
+            <button class="control-btn">Edit Config</button>
+            <button class="control-btn">Backup Config</button>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h4>Database Management</h4>
+          <div class="btn-group">
+            <button class="control-btn">Check Database</button>
+            <button class="control-btn">Backup Database</button>
+            <button class="control-btn">Restore Database</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="Servers.js"></script>
+</body>
+</html>

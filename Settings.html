@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flare - Settings</title>
+  <link rel="stylesheet" href="Settings.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- ===== SIDEBAR ===== -->
+    <div class="sidebar">
+      <div class="logo">Flare</div>
+      <ul class="menu">
+        <li><a href="Flare.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="Servers.html"><i class="fas fa-server"></i> Servers</a></li>
+        <li><a href="Channels.html"><i class="fas fa-tv"></i> Channels</a></li>
+        <li><a href="Customers.html"><i class="fas fa-users"></i> Customers</a></li>
+        <li><a href="Resellers.html"><i class="fas fa-user-tag"></i> Resellers</a></li>
+        <li><a href="Radio.html"><i class="fas fa-broadcast-tower"></i> Radio</a></li>
+        <li><a href="Statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+        <li><a href="Tools.html"><i class="fas fa-wrench"></i> Tools</a></li>
+        <li><a href="Settings.html" class="active"><i class="fas fa-cog"></i> Settings</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="main-content">
+      <header>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+      </header>
+
+      <div class="settings">
+        <h2><i class="fas fa-user-circle"></i> Profile Settings</h2>
+        <form id="profile-form">
+          <div class="setting-row">
+            <div class="setting-label">
+              <label>Profile Picture</label>
+              <span class="setting-description">Upload a new profile image</span>
+            </div>
+            <input class="input" type="file" accept="image/*" />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-label">
+              <label>Full Name</label>
+              <span class="setting-description">Displayed on your account</span>
+            </div>
+            <input class="input" type="text" id="full-name" placeholder="John Doe" />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-label">
+              <label>Email Address</label>
+              <span class="setting-description">Used for notifications</span>
+            </div>
+            <input class="input" type="email" id="email" placeholder="example@flare.com" />
+          </div>
+
+          <button type="submit" class="config-button"><i class="fas fa-save"></i> Save Profile</button>
+        </form>
+
+        <h2><i class="fas fa-lock"></i> Security Settings</h2>
+        <form id="security-form">
+          <div class="setting-row">
+            <div class="setting-label">
+              <label>Current Password</label>
+            </div>
+            <input class="input" type="password" placeholder="********" />
+          </div>
+          <div class="setting-row">
+            <div class="setting-label">
+              <label>New Password</label>
+            </div>
+            <input class="input" type="password" placeholder="Enter new password" />
+          </div>
+          <div class="setting-row">
+            <div class="setting-label">
+              <label>Confirm Password</label>
+            </div>
+            <input class="input" type="password" placeholder="Confirm new password" />
+          </div>
+          <button type="submit" class="config-button"><i class="fas fa-key"></i> Update Password</button>
+        </form>
+
+        <h2><i class="fas fa-sliders-h"></i> System Preferences</h2>
+        <form id="preferences-form">
+          <div class="setting-row">
+            <div class="setting-label">
+              <label>Language</label>
+              <span class="setting-description">Choose your preferred language</span>
+            </div>
+            <select id="language">
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="es">Español</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-label">
+              <label>Enable Notifications</label>
+              <span class="setting-description">Receive alerts and updates</span>
+            </div>
+            <input type="checkbox" id="notifications" />
+          </div>
+
+          <button type="submit" class="config-button"><i class="fas fa-save"></i> Save Preferences</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="Settings.js"></script>
+</body>
+</html>

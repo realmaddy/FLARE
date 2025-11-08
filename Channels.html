@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flare - Channels</title>
+  <link rel="stylesheet" href="Channels.css" />
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <script>
+    // Apply saved dark mode before content load
+    (function () {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">Flare</div>
+      <ul class="menu">
+        <li><a href="Flare.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="Servers.html"><i class="fas fa-server"></i> Servers</a></li>
+        <li><a href="Channels.html" class="active"><i class="fas fa-tv"></i> Channels</a></li>
+        <li><a href="Customers.html"><i class="fas fa-users"></i> Customers</a></li>
+        <li><a href="Resellers.html"><i class="fas fa-user-tag"></i> Resellers</a></li>
+        <li><a href="Radio.html"><i class="fas fa-broadcast-tower"></i> Radio</a></li>
+        <li><a href="Statistics.html"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+        <li><a href="Tools.html"><i class="fas fa-wrench"></i> Tools</a></li>
+        <li><a href="Settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header>
+        <div class="page-title">
+          <h1>Channel Management</h1>
+          <p>Monitor live channels, manage categories, and add new streams.</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+      </header>
+
+      <!-- Channels Grid -->
+      <div class="channels-section">
+        <div class="section-header">
+          <div>
+            <h2>Active Channels</h2>
+            <span class="subtitle">Currently broadcasting: 5 • Total Channels: 12</span>
+          </div>
+          <div>
+            <button id="add-channel-btn" class="primary-btn">
+              <i class="fas fa-plus"></i> Add Channel
+            </button>
+          </div>
+        </div>
+
+        <div class="channels-grid">
+          <!-- Channel Card -->
+          <div class="channel-card">
+            <div class="channel-header">
+              <h3>Flare Sports HD</h3>
+              <span class="channel-status status-active">Live</span>
+            </div>
+            <p><strong>Category:</strong> Sports</p>
+            <p><strong>Viewers:</strong> 3,128</p>
+            <p><strong>Quality:</strong> 1080p</p>
+            <p><strong>Server:</strong> EU Node 02</p>
+            <div class="channel-actions">
+              <button class="action-btn"><i class="fas fa-pen"></i> Edit</button>
+              <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+            </div>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-header">
+              <h3>Flare Cinema 4K</h3>
+              <span class="channel-status status-active">Live</span>
+            </div>
+            <p><strong>Category:</strong> Movies</p>
+            <p><strong>Viewers:</strong> 4,512</p>
+            <p><strong>Quality:</strong> 4K UHD</p>
+            <p><strong>Server:</strong> US Node 01</p>
+            <div class="channel-actions">
+              <button class="action-btn"><i class="fas fa-pen"></i> Edit</button>
+              <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+            </div>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-header">
+              <h3>Flare News 24</h3>
+              <span class="channel-status status-active">Live</span>
+            </div>
+            <p><strong>Category:</strong> News</p>
+            <p><strong>Viewers:</strong> 2,176</p>
+            <p><strong>Quality:</strong> 720p</p>
+            <p><strong>Server:</strong> EU Node 01</p>
+            <div class="channel-actions">
+              <button class="action-btn"><i class="fas fa-pen"></i> Edit</button>
+              <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+            </div>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-header">
+              <h3>KidsZone TV</h3>
+              <span class="channel-status status-inactive">Offline</span>
+            </div>
+            <p><strong>Category:</strong> Kids</p>
+            <p><strong>Viewers:</strong> 0</p>
+            <p><strong>Quality:</strong> HD</p>
+            <p><strong>Server:</strong> EU Node 03</p>
+            <div class="channel-actions">
+              <button class="action-btn"><i class="fas fa-pen"></i> Edit</button>
+              <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+            </div>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-header">
+              <h3>Flare Music Live</h3>
+              <span class="channel-status status-active">Live</span>
+            </div>
+            <p><strong>Category:</strong> Music</p>
+            <p><strong>Viewers:</strong> 5,004</p>
+            <p><strong>Quality:</strong> 1080p</p>
+            <p><strong>Server:</strong> MENA Node</p>
+            <div class="channel-actions">
+              <button class="action-btn"><i class="fas fa-pen"></i> Edit</button>
+              <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add New Channel Modal -->
+      <div class="add-channel-modal" style="display: none;">
+        <div class="modal-content">
+          <h2>Add New Channel</h2>
+          <form id="new-channel-form">
+            <label for="channel-name">Channel Name</label>
+            <input type="text" id="channel-name" placeholder="e.g. Flare Sports HD" />
+
+            <label for="channel-category">Category</label>
+            <input type="text" id="channel-category" placeholder="e.g. Sports" />
+
+            <label for="channel-quality">Quality</label>
+            <input type="text" id="channel-quality" placeholder="e.g. 1080p" />
+
+            <label for="channel-server">Server Node</label>
+            <input type="text" id="channel-server" placeholder="e.g. EU Node 01" />
+
+            <button type="submit" class="primary-btn">
+              <i class="fas fa-plus-circle"></i> Add Channel
+            </button>
+          </form>
+          <button id="close-modal-btn" class="outline-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Channels.js"></script>
+</body>
+</html>
